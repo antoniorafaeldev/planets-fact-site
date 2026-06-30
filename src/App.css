@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Neutral */
+  --color-neutral-950: #000000;
+  --color-neutral-300: #d8d8d8;
+  --color-neutral-0: #ffffff;
+
+  /* Aqua */
+  --color-aqua-100: #b1d5e2;
+  --color-aqua-50: #def4fc;
+
+  /* Core palette */
+  --color-navy-950: #070724;
+  --color-teal-400: #1ec1a2;
+  --color-purple-600: #6d2ed5;
+  --color-bronze-700: #b87d43;
+  --color-red-500: #d83a34;
+  --color-orange-600: #ff6f3c;
+  --color-amber-400: #eda249;
+  --color-blue-600: #2d68f0;
+  --color-sky-400: #419ebb;
+
+  /* Typography */
+  --font-family-primary: "Antonio", sans-serif;
+  --font-family-secondary: "League Spartan", sans-serif;
+}
