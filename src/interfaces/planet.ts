@@ -1,4 +1,4 @@
-export interface Planet {
+export interface PlanetProps {
     name: string;
     description: string;
     infoSource: string;
