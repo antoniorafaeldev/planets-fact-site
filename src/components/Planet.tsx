@@ -1,3 +1,4 @@
+
 import type { PlanetProps } from "../interfaces/planet";
 
 export function Planet({
@@ -7,6 +8,7 @@ export function Planet({
   imgSrc,
   information,
 }: PlanetProps) {
+
   return (
     <section className="planet">
       <div className="planet-info">

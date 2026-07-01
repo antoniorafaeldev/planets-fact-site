@@ -1,22 +1,49 @@
+import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Planet } from "./components/Planet";
-import  EarthImage from "./assets/planet-earth.svg"
+import planets from "./data.json";
+
 import "./App.css";
 
 function App() {
+  const [currentPlanet, setCurrentPlanet] = useState("Earth");
+  const [activeView, setActiveView] = useState<
+    "overview" | "structure" | "geology"
+  >("overview");
+
+  const planet = planets.find((planet) => planet.name === currentPlanet);
+
+  if (!planet) return null;
+
+  const { content, source } = planet[activeView];
+  const {name, rotation, revolution, radius, temperature} = planet;
+
+
+  const image =
+    activeView === "overview"
+      ? planet.images.planet
+      : activeView === "structure"
+        ? planet.images.internal
+        : planet.images.geology;
+
+  const handlePlanetChange = (planetName: string) => {
+    setCurrentPlanet(planetName);
+    setActiveView("overview");
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar onPlanetChange={handlePlanetChange} />
       <Planet
-        name="Earth"
-        description="Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive."
-        infoSource="https://en.wikipedia.org/wiki/Earth"
-        imgSrc={EarthImage}
+        name={name}
+        description={content}
+        infoSource={source}
+        imgSrc={image}
         information={{
-          rotationTime: "0.99 days",
-          revolutionTime: "365.26 days",
-          radius: "6,371 km",
-          averageTemp: "16°C",
+          rotationTime: rotation,
+          revolutionTime: revolution,
+          radius: radius,
+          averageTemp: temperature,
         }}
       />
     </>
