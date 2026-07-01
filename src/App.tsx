@@ -16,8 +16,7 @@ function App() {
   if (!planet) return null;
 
   const { content, source } = planet[activeView];
-  const {name, rotation, revolution, radius, temperature} = planet;
-
+  const { name, rotation, revolution, radius, temperature } = planet;
 
   const image =
     activeView === "overview"
@@ -29,8 +28,30 @@ function App() {
   const handlePlanetChange = (planetName: string) => {
     setCurrentPlanet(planetName);
     setActiveView("overview");
-  }
+  };
 
+  const handleViewChange = (view: "overview" | "structure" | "geology") => {
+    setActiveView(view);
+
+    const overviewButton = document.getElementById("overview");
+    const structureButton = document.getElementById("structure");
+    const geologyButton = document.getElementById("geology");
+
+    if (overviewButton && structureButton && geologyButton) {
+      overviewButton.classList.remove("active");
+      structureButton.classList.remove("active");
+      geologyButton.classList.remove("active");
+    }
+
+    if (view === "overview" && overviewButton) {
+      overviewButton.classList.add("active");
+    } else if (view === "structure" && structureButton) {
+      structureButton.classList.add("active");
+    } else if (view === "geology" && geologyButton) {
+      geologyButton.classList.add("active");
+    }
+    
+  };
   return (
     <>
       <Navbar onPlanetChange={handlePlanetChange} />
@@ -45,6 +66,7 @@ function App() {
           radius: radius,
           averageTemp: temperature,
         }}
+        onViewChange={handleViewChange}
       />
     </>
   );

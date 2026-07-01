@@ -7,6 +7,7 @@ export function Planet({
   infoSource,
   imgSrc,
   information,
+  onViewChange
 }: PlanetProps) {
 
   return (
@@ -25,9 +26,15 @@ export function Planet({
             </a>
           </p>
           <div className="planet-options">
-            <button className="planet-option active"><span>01</span> <span>Overview</span></button>
-            <button className="planet-option"><span>02</span> <span>Structure</span></button>
-            <button className="planet-option"><span>03</span> <span>Surface</span></button>
+            <button className="planet-option active" id="overview" onClick={() => onViewChange("overview")}>
+              <span>01</span> <span>Overview</span>
+            </button>
+            <button className="planet-option" id="structure" onClick={() => onViewChange("structure")}>
+              <span>02</span> <span>Structure</span>
+            </button>
+            <button className="planet-option" id="geology" onClick={() => onViewChange("geology")}>
+              <span>03</span> <span>Surface</span>
+            </button>
           </div>
         </div>
       </div>
@@ -49,3 +56,4 @@ function Stat({ title, value }: { title: string; value: string }) {
     </div>
   );
 }
+

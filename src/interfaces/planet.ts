@@ -9,4 +9,6 @@ export interface PlanetProps {
         radius: string;
         averageTemp: string;
     };
+    onViewChange: (view: "overview" | "structure" | "geology") => void;
 }
+
