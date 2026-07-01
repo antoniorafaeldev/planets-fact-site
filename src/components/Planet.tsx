@@ -42,8 +42,8 @@ export function Planet({
 function Stat({ title, value }: { title: string; value: string }) {
   return (
     <div className="planet-stat">
-      <h3>{title}</h3>
-      <p>{value}</p>
+        <h3 className="planet-stat-title">{title}</h3>
+        <p className="planet-stat-value">{value}</p>
     </div>
   );
 }
