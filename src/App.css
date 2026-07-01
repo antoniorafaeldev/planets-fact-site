@@ -38,6 +38,7 @@ body {
   background-size: cover;
   color: var(--color-neutral-0);
   font-family: var(--font-family-primary);
+  min-height: 100vh;
 }
 
 .navbar {
@@ -66,7 +67,7 @@ body {
 
   color: var(--color-neutral-0);
   text-decoration: none;
-
+  font-weight: bold;
 
 }
 
@@ -75,4 +76,79 @@ body {
   line-height: 130%;
   letter-spacing: -1px;
   text-transform: uppercase;
+}
+
+.planet {
+  margin: 2rem;
+}
+
+.planet-info {
+  display: flex;
+  justify-content: center;
+  gap: 13.75rem;
+}
+
+.planet-name {
+  font-size: 5rem;
+  line-height: 130%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.planet-details {
+  width: min(90%, 21.875rem);
+}
+
+.planet-description {
+  font-size: 0.875rem; 
+  line-height: 180%;
+  letter-spacing: 0px;
+  font-family: var(--font-family-secondary);
+  font-weight: 400;
+  color: var(--color-neutral-300);
+  margin: 1rem 0;
+}
+
+.planet-info-source {
+  font-size: 0.875rem;
+  line-height: 180%;
+  letter-spacing: 0px;
+  font-family: var(--font-family-secondary);
+  font-weight: 400;
+  color: var(--color-neutral-0);
+  opacity: 0.5;
+}
+
+.planet-info-link {
+  color: var(--color-neutral-0);
+  font-weight: bold;
+}
+
+.planet-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.planet-option {
+  background: none;
+  border: 1px solid var(--color-neutral-300);
+  color: var(--color-neutral-0);
+  font-family: var(--font-family-secondary);
+  font-size: 0.875rem;
+  line-height: 180%;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--color-purple-600);
+  border: none;
 }

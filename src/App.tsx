@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Planet
         name="Earth"
-        description="Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% covered with water."
+        description="Earth is the third planet from the Sun and the only astronomical object known to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive."
         infoSource="https://en.wikipedia.org/wiki/Earth"
         imgSrc={EarthImage}
         information={{

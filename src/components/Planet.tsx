@@ -14,18 +14,18 @@ export function Planet({
           <img src={imgSrc} alt={name} />
         </div>
         <div className="planet-details">
-          <h2>{name}</h2>
-          <p>{description}</p>
-          <p>
+          <h2 className="planet-name">{name}</h2>
+          <p className="planet-description">{description}</p>
+          <p className="planet-info-source">
             Source:{" "}
-            <a href={infoSource} target="_blank">
+            <a href={infoSource} className="planet-info-link" target="_blank">
               Wikipedia
             </a>
           </p>
           <div className="planet-options">
-            <button className="planet-option">Overview</button>
-            <button className="planet-option">Structure</button>
-            <button className="planet-option">Surface</button>
+            <button className="planet-option active"><span>01</span> <span>Overview</span></button>
+            <button className="planet-option"><span>02</span> <span>Structure</span></button>
+            <button className="planet-option"><span>03</span> <span>Surface</span></button>
           </div>
         </div>
       </div>
