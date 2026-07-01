@@ -22,6 +22,11 @@ export function Planet({
               Wikipedia
             </a>
           </p>
+          <div className="planet-options">
+            <button className="planet-option">Overview</button>
+            <button className="planet-option">Structure</button>
+            <button className="planet-option">Surface</button>
+          </div>
         </div>
       </div>
       <div className="planet-stats">
