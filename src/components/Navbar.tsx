@@ -1,76 +1,99 @@
-export function Navbar({ onPlanetChange }: { onPlanetChange: (planetName: string) => void }) {
+import { useState } from "react";
+import hamburgerIcon from "../assets/icon-hamburger.svg";
+
+export function Navbar({
+  onPlanetChange,
+}: {
+  onPlanetChange: (planetName: string) => void;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handlePlanetClick = (planetName: string) => {
+    setMenuOpen(false);
+    onPlanetChange(planetName);
+  };
+
   return (
     <nav className="navbar">
       <span className="navbar-logo">The Planets</span>
-      <ul className="navbar-links">
+      <button
+        className="navbar-toggle"
+        type="button"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((current) => !current)}
+      >
+        <img src={hamburgerIcon} alt="Menu" />
+      </button>
+      <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link mercury"
             href="#mercury"
-            onClick={() => onPlanetChange("Mercury")}
+            onClick={() => handlePlanetClick("Mercury")}
           >
             Mercury
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link venus"
             href="#venus"
-            onClick={() => onPlanetChange("Venus")}
+            onClick={() => handlePlanetClick("Venus")}
           >
             Venus
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link earth"
             href="#earth"
-            onClick={() => onPlanetChange("Earth")}
+            onClick={() => handlePlanetClick("Earth")}
           >
             Earth
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link mars"
             href="#mars"
-            onClick={() => onPlanetChange("Mars")}
+            onClick={() => handlePlanetClick("Mars")}
           >
             Mars
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link jupiter"
             href="#jupiter"
-            onClick={() => onPlanetChange("Jupiter")}
+            onClick={() => handlePlanetClick("Jupiter")}
           >
             Jupiter
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link saturn"
             href="#saturn"
-            onClick={() => onPlanetChange("Saturn")}
+            onClick={() => handlePlanetClick("Saturn")}
           >
             Saturn
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link uranus"
             href="#uranus"
-            onClick={() => onPlanetChange("Uranus")}
+            onClick={() => handlePlanetClick("Uranus")}
           >
             Uranus
           </a>
         </li>
         <li>
           <a
-            className="navbar-link"
+            className="navbar-link neptune"
             href="#neptune"
-            onClick={() => onPlanetChange("Neptune")}
+            onClick={() => handlePlanetClick("Neptune")}
           >
             Neptune
           </a>

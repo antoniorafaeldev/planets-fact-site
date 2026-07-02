@@ -42,12 +42,27 @@ body {
 }
 
 .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(216, 216, 216, 0.2);
 
   padding: 2.5rem 2rem;
+}
+
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-toggle img {
+  display: block;
+  width: 1.5rem;
+  height: auto;
 }
 
 .navbar-links {
