@@ -20,19 +20,21 @@ export function Planet({
               src={surfaceImg}
               alt={`${name} surface`}
               className="planet-surface"
-
             />
           )}
         </div>
         <div className="planet-details">
-          <h2 className="planet-name">{name}</h2>
-          <p className="planet-description">{description}</p>
-          <p className="planet-info-source">
-            Source:{" "}
-            <a href={infoSource} className="planet-info-link" target="_blank">
-              Wikipedia
-            </a>
-          </p>
+          <div className="planet-header">
+            <h2 className="planet-name">{name}</h2>
+            <p className="planet-description">{description}</p>
+            <p className="planet-info-source">
+              Source:{" "}
+              <a href={infoSource} className="planet-info-link" target="_blank">
+                Wikipedia
+              </a>
+            </p>
+          </div>
+
           <div className="planet-options">
             <button
               className="planet-option active"

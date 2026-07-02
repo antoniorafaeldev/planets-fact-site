@@ -84,12 +84,16 @@ body {
 
 .planet {
   margin: 2rem;
+
+
 }
 
 .planet-info {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 13.75rem;
+
 }
 
 .planet-name {
@@ -126,7 +130,11 @@ body {
 
 .planet-details {
   width: min(90%, 21.875rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 
 .planet-description {
   font-size: 0.875rem;
@@ -158,6 +166,8 @@ body {
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
+
+  width: min(90%, 21.875rem);
 }
 
 .planet-option {
@@ -179,7 +189,9 @@ body {
 .planet-option:hover {
   background-color: #d8d8d897;
   border-color: #d8d8d800;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .active {
