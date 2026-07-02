@@ -4,6 +4,7 @@ import { Planet } from "./components/Planet";
 import planets from "./data.json";
 
 import "./App.css";
+import "./responsive.css";
 
 function App() {
   const [currentPlanet, setCurrentPlanet] = useState("Earth");

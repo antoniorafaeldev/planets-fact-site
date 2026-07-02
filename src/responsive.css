@@ -1,1 +1,40 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        gap: 2rem;
+    }
 
+    .planet-info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .planet-details {
+        width: 100%;
+
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .planet-header, .planet-options {
+        width: 50%;
+    }
+
+    .planet-options {
+        justify-content: center;
+    }
+
+    .planet-stat {
+        width: 10.25rem;
+        padding: 1rem;
+    }
+
+    .planet-stat-value {
+        font-size: 1.25rem;
+    }
+
+    .planet-stat-title {
+        font-size: 0.75rem;
+    }
+}

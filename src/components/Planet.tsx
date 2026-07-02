@@ -64,7 +64,7 @@ export function Planet({
         <Stat title="Rotation Time" value={information.rotationTime} />
         <Stat title="Revolution Time" value={information.revolutionTime} />
         <Stat title="Radius" value={information.radius} />
-        <Stat title="Average Temperature" value={information.averageTemp} />
+        <Stat title="Average Temp." value={information.averageTemp} />
       </div>
     </section>
   );
