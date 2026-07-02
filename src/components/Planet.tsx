@@ -1,4 +1,3 @@
-
 import type { PlanetProps } from "../interfaces/planet";
 
 export function Planet({
@@ -6,15 +5,24 @@ export function Planet({
   description,
   infoSource,
   imgSrc,
+  surfaceImg,
+  showSurfaceImage,
   information,
-  onViewChange
+  onViewChange,
 }: PlanetProps) {
-
   return (
     <section className="planet">
       <div className="planet-info">
         <div className="planet-image">
-          <img src={imgSrc} alt={name} />
+          <img src={imgSrc} alt={name} className="planet-image__img" />
+          {showSurfaceImage && (
+            <img
+              src={surfaceImg}
+              alt={`${name} surface`}
+              className="planet-surface"
+
+            />
+          )}
         </div>
         <div className="planet-details">
           <h2 className="planet-name">{name}</h2>
@@ -26,13 +34,25 @@ export function Planet({
             </a>
           </p>
           <div className="planet-options">
-            <button className="planet-option active" id="overview" onClick={() => onViewChange("overview")}>
+            <button
+              className="planet-option active"
+              id="overview"
+              onClick={() => onViewChange("overview")}
+            >
               <span>01</span> <span>Overview</span>
             </button>
-            <button className="planet-option" id="structure" onClick={() => onViewChange("structure")}>
+            <button
+              className="planet-option"
+              id="structure"
+              onClick={() => onViewChange("structure")}
+            >
               <span>02</span> <span>Structure</span>
             </button>
-            <button className="planet-option" id="geology" onClick={() => onViewChange("geology")}>
+            <button
+              className="planet-option"
+              id="geology"
+              onClick={() => onViewChange("geology")}
+            >
               <span>03</span> <span>Surface</span>
             </button>
           </div>
@@ -51,9 +71,8 @@ export function Planet({
 function Stat({ title, value }: { title: string; value: string }) {
   return (
     <div className="planet-stat">
-        <h3 className="planet-stat-title">{title}</h3>
-        <p className="planet-stat-value">{value}</p>
+      <h3 className="planet-stat-title">{title}</h3>
+      <p className="planet-stat-value">{value}</p>
     </div>
   );
 }
-

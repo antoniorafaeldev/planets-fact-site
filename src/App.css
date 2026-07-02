@@ -65,10 +65,14 @@ body {
   letter-spacing: 0px;
   text-transform: uppercase;
 
-  color: var(--color-neutral-0);
+  color: var(--color-neutral-300);
   text-decoration: none;
   font-weight: bold;
+}
 
+.navbar-link:hover {
+  color: var(--color-neutral-0);
+  transition: color 0.3s ease;
 }
 
 .navbar-logo {
@@ -100,6 +104,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.planet-image__img {
+  display: block;
+}
+
+.planet-surface {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  max-width: 40%;
+  width: auto;
+
+  width: 10.188rem;
+  height: auto;
 }
 
 .planet-details {
@@ -107,7 +129,7 @@ body {
 }
 
 .planet-description {
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   line-height: 180%;
   letter-spacing: 0px;
   font-family: var(--font-family-secondary);
@@ -154,7 +176,18 @@ body {
   cursor: pointer;
 }
 
+.planet-option:hover {
+  background-color: #d8d8d897;
+  border-color: #d8d8d800;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
 .active {
+  background-color: var(--color-purple-600);
+  border: none;
+}
+
+.active:hover {
   background-color: var(--color-purple-600);
   border: none;
 }
@@ -176,7 +209,7 @@ body {
 }
 
 .planet-stat-title {
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   font-family: var(--font-family-secondary);
   font-weight: bold;
   color: var(--color-neutral-0);
@@ -184,10 +217,10 @@ body {
   line-height: 225%;
   letter-spacing: 1px;
   text-transform: uppercase;
-} 
+}
 
 .planet-stat-value {
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
   font-weight: 400;
   color: var(--color-neutral-0);
   line-height: 130%;

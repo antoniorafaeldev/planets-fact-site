@@ -19,15 +19,15 @@ function App() {
   const { name, rotation, revolution, radius, temperature } = planet;
 
   const image =
-    activeView === "overview"
+    activeView === "overview" || activeView === "geology"
       ? planet.images.planet
-      : activeView === "structure"
-        ? planet.images.internal
-        : planet.images.geology;
+      : planet.images.internal;
+  const surfaceImage = planet.images.geology;
+  const showSurfaceImage = activeView === "geology";
 
   const handlePlanetChange = (planetName: string) => {
     setCurrentPlanet(planetName);
-    setActiveView("overview");
+    setActiveView(activeView);
   };
 
   const handleViewChange = (view: "overview" | "structure" | "geology") => {
@@ -50,7 +50,6 @@ function App() {
     } else if (view === "geology" && geologyButton) {
       geologyButton.classList.add("active");
     }
-    
   };
   return (
     <>
@@ -60,6 +59,8 @@ function App() {
         description={content}
         infoSource={source}
         imgSrc={image}
+        surfaceImg={surfaceImage}
+        showSurfaceImage={showSurfaceImage}
         information={{
           rotationTime: rotation,
           revolutionTime: revolution,
