@@ -14,7 +14,7 @@ export function Planet({
     <section className="planet">
       <div className="planet-info">
         <div className="planet-image">
-          <img src={imgSrc} alt={name} className="planet-image__img" />
+          <img src={imgSrc} alt={name} className={`planet-image__img ${name.toLowerCase()}-img`} />
           {showSurfaceImage && (
             <img
               src={surfaceImg}

@@ -182,4 +182,49 @@
   .planet-stat-title {
     font-size: 0.75rem;
   }
+
+  .planet-surface {
+    width: 5.119rem;
+    height: auto;
+  }
+
+  .mercury-img {
+    width: 6.938rem;
+    height: 6.938rem;
+  }
+
+  .venus-img {
+    width: 9.625rem;
+    height: 9.625rem;
+  }
+
+  .earth-img {
+    width: 10.813rem;
+    height: 10.813rem;
+  }
+
+  .mars-img {
+    width: 8.063rem;
+    height: 8.063rem;
+  }
+
+  .jupiter-img, .saturn-img {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .uranus-img, .neptune-img {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .planet-header {
+    text-align: center;
+  }
+
+  .planet-stat {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
