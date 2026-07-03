@@ -58,14 +58,19 @@ function App() {
       overviewButton.classList.remove("active");
       structureButton.classList.remove("active");
       geologyButton.classList.remove("active");
+
+
     }
 
     if (view === "overview" && overviewButton) {
       overviewButton.classList.add("active");
+
     } else if (view === "structure" && structureButton) {
       structureButton.classList.add("active");
+
     } else if (view === "geology" && geologyButton) {
       geologyButton.classList.add("active");
+
     }
   };
   return (

@@ -22,6 +22,52 @@
     width: 50%;
   }
 
+  .mercury-img {
+    width: 11.5rem;
+    height: 11.5rem;
+  }
+
+  .venus-img {
+    width: 15.813rem;
+    height: 15.813rem;
+  }
+
+  .earth-img {
+    width: 17.813rem;
+    height: 17.813rem;
+  }
+
+  .mars-img {
+    width: 13.313rem;
+    height: 13.313rem;
+  }
+
+  .jupiter-img {
+    width: 23.063rem;
+    height: 23.063rem;
+  }
+
+  .saturn-img {
+    width: 26.375rem;
+    height: 26.375rem;
+  }
+
+  .uranus-img {
+    width: 18.125rem;
+    height: 18.125rem;
+  }
+
+  .neptune-img {
+    width: 17.813rem;
+    height: 17.813rem;
+  }
+
+  .planet-name {
+    font-size: 3rem;
+  }
+
+  
+
   .planet-options {
     justify-content: center;
   }
@@ -149,6 +195,7 @@
   .planet {
     margin: 1.5rem 1rem;
   }
+
 
   .planet-info {
     flex-direction: column;
