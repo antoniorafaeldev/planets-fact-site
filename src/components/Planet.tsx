@@ -8,13 +8,23 @@ export function Planet({
   surfaceImg,
   showSurfaceImage,
   information,
+  currentPlanet,
+  activeView,
   onViewChange,
 }: PlanetProps) {
+  const activePlanetClass = currentPlanet.toLowerCase();
+  const optionClass = (view: "overview" | "structure" | "geology") =>
+    `planet-option${activeView === view ? ` active active-${activePlanetClass}` : ""}`;
+
   return (
     <section className="planet">
       <div className="planet-info">
         <div className="planet-image">
-          <img src={imgSrc} alt={name} className={`planet-image__img ${name.toLowerCase()}-img`} />
+          <img
+            src={imgSrc}
+            alt={name}
+            className={`planet-image__img ${name.toLowerCase()}-img`}
+          />
           {showSurfaceImage && (
             <img
               src={surfaceImg}
@@ -37,21 +47,21 @@ export function Planet({
 
           <div className="planet-options">
             <button
-              className="planet-option active"
+              className={optionClass("overview")}
               id="overview"
               onClick={() => onViewChange("overview")}
             >
               <span>01</span> <span>Overview</span>
             </button>
             <button
-              className="planet-option"
+              className={optionClass("structure")}
               id="structure"
               onClick={() => onViewChange("structure")}
             >
               <span>02</span> <span>Structure</span>
             </button>
             <button
-              className="planet-option"
+              className={optionClass("geology")}
               id="geology"
               onClick={() => onViewChange("geology")}
             >

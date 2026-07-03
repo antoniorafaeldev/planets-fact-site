@@ -26,56 +26,19 @@ function App() {
   const surfaceImage = planet.images.geology;
   const showSurfaceImage = activeView === "geology";
 
-  const handlePlanetChange = (
-    planetName: string,
-    event: React.MouseEvent<HTMLAnchorElement>,
-  ) => {
+  const handlePlanetChange = (planetName: string) => {
     setCurrentPlanet(planetName);
-    setActiveView(activeView);
-
-    const clickedPlanet = event.currentTarget;
-
-    const allPlanetLinks = document.querySelectorAll(".navbar-link");
-    allPlanetLinks.forEach((link) => {
-      link.classList.forEach((className) => {
-        if (className.startsWith("active-")) {
-          link.classList.remove(className);
-        }
-      });
-    });
-
-    clickedPlanet.classList.add(`active-${planetName.toLowerCase()}`);
   };
 
   const handleViewChange = (view: "overview" | "structure" | "geology") => {
     setActiveView(view);
-
-    const overviewButton = document.getElementById("overview");
-    const structureButton = document.getElementById("structure");
-    const geologyButton = document.getElementById("geology");
-
-    if (overviewButton && structureButton && geologyButton) {
-      overviewButton.classList.remove("active");
-      structureButton.classList.remove("active");
-      geologyButton.classList.remove("active");
-
-
-    }
-
-    if (view === "overview" && overviewButton) {
-      overviewButton.classList.add("active");
-
-    } else if (view === "structure" && structureButton) {
-      structureButton.classList.add("active");
-
-    } else if (view === "geology" && geologyButton) {
-      geologyButton.classList.add("active");
-
-    }
   };
   return (
     <>
-      <Navbar onPlanetChange={handlePlanetChange} />
+      <Navbar
+        currentPlanet={currentPlanet}
+        onPlanetChange={handlePlanetChange}
+      />
       <Planet
         name={name}
         description={content}
@@ -89,6 +52,8 @@ function App() {
           radius: radius,
           averageTemp: temperature,
         }}
+        activeView={activeView}
+        currentPlanet={currentPlanet}
         onViewChange={handleViewChange}
       />
     </>

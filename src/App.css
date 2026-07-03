@@ -206,12 +206,10 @@ body {
 }
 
 .active {
-  background-color: var(--color-purple-600);
   border: none;
 }
 
 .active:hover {
-  background-color: var(--color-purple-600);
   border: none;
 }
 
@@ -251,7 +249,14 @@ body {
   text-transform: uppercase;
 }
 
-.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune {
+.mercury,
+.venus,
+.earth,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune {
   transition: all 0.3s ease;
 }
 
@@ -293,4 +298,44 @@ body {
 .neptune:hover {
   border-bottom: 4px solid var(--color-blue-600);
   padding-bottom: 0.25rem;
+}
+
+.planet-options .active-mercury,
+.planet-options .active-mercury:hover {
+  background-color: var(--color-aqua-100);
+}
+
+.planet-options .active-venus,
+.planet-options .active-venus:hover {
+  background-color: var(--color-amber-400);
+}
+
+.planet-options .active-earth,
+.planet-options .active-earth:hover {
+  background-color: var(--color-purple-600);
+}
+
+.planet-options .active-mars,
+.planet-options .active-mars:hover {
+  background-color: var(--color-red-500);
+}
+
+.planet-options .active-jupiter,
+.planet-options .active-jupiter:hover {
+  background-color: var(--color-orange-600);
+}
+
+.planet-options .active-saturn,
+.planet-options .active-saturn:hover {
+  background-color: var(--color-bronze-700);
+}
+
+.planet-options .active-uranus,
+.planet-options .active-uranus:hover {
+  background-color: var(--color-teal-400);
+}
+
+.planet-options .active-neptune,
+.planet-options .active-neptune:hover {
+  background-color: var(--color-blue-600);
 }

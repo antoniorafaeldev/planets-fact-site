@@ -11,5 +11,7 @@ export interface PlanetProps {
     radius: string;
     averageTemp: string;
   };
+  currentPlanet: string;
+  activeView: "overview" | "structure" | "geology";
   onViewChange: (view: "overview" | "structure" | "geology") => void;
 }

@@ -2,15 +2,17 @@ import { useState } from "react";
 import hamburgerIcon from "../assets/icon-hamburger.svg";
 
 export function Navbar({
+  currentPlanet,
   onPlanetChange,
 }: {
-  onPlanetChange: (planetName: string, event: React.MouseEvent<HTMLAnchorElement>) => void;
+  currentPlanet: string;
+  onPlanetChange: (planetName: string) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handlePlanetClick = (planetName: string, event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handlePlanetClick = (planetName: string) => {
     setMenuOpen(false);
-    onPlanetChange(planetName, event);
+    onPlanetChange(planetName);
   };
 
   return (
@@ -28,72 +30,72 @@ export function Navbar({
       <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
         <li>
           <a
-            className="navbar-link mercury"
+            className={`navbar-link mercury ${currentPlanet === "Mercury" ? "active-mercury" : ""}`}
             href="#mercury"
-            onClick={(event) => handlePlanetClick("Mercury", event)}
+            onClick={() => handlePlanetClick("Mercury")}
           >
             Mercury
           </a>
         </li>
         <li>
           <a
-            className="navbar-link venus"
+            className={`navbar-link venus ${currentPlanet === "Venus" ? "active-venus" : ""}`}
             href="#venus"
-            onClick={(event) => handlePlanetClick("Venus", event)}
+            onClick={() => handlePlanetClick("Venus")}
           >
             Venus
           </a>
         </li>
         <li>
           <a
-            className="navbar-link earth"
+            className={`navbar-link earth ${currentPlanet === "Earth" ? "active-earth" : ""}`}
             href="#earth"
-            onClick={(event) => handlePlanetClick("Earth", event)}
+            onClick={() => handlePlanetClick("Earth")}
           >
             Earth
           </a>
         </li>
         <li>
           <a
-            className="navbar-link mars"
+            className={`navbar-link mars ${currentPlanet === "Mars" ? "active-mars" : ""}`}
             href="#mars"
-            onClick={(event) => handlePlanetClick("Mars", event)}
+            onClick={() => handlePlanetClick("Mars")}
           >
             Mars
           </a>
         </li>
         <li>
           <a
-            className="navbar-link jupiter"
+            className={`navbar-link jupiter ${currentPlanet === "Jupiter" ? "active-jupiter" : ""}`}
             href="#jupiter"
-            onClick={(event) => handlePlanetClick("Jupiter", event)}
+            onClick={() => handlePlanetClick("Jupiter")}
           >
             Jupiter
           </a>
         </li>
         <li>
           <a
-            className="navbar-link saturn"
+            className={`navbar-link saturn ${currentPlanet === "Saturn" ? "active-saturn" : ""}`}
             href="#saturn"
-            onClick={(event) => handlePlanetClick("Saturn", event)}
+            onClick={() => handlePlanetClick("Saturn")}
           >
             Saturn
           </a>
         </li>
         <li>
           <a
-            className="navbar-link uranus"
+            className={`navbar-link uranus ${currentPlanet === "Uranus" ? "active-uranus" : ""}`}
             href="#uranus"
-            onClick={(event) => handlePlanetClick("Uranus", event)}
+            onClick={() => handlePlanetClick("Uranus")}
           >
             Uranus
           </a>
         </li>
         <li>
           <a
-            className="navbar-link neptune"
+            className={`navbar-link neptune ${currentPlanet === "Neptune" ? "active-neptune" : ""}`}
             href="#neptune"
-            onClick={(event) => handlePlanetClick("Neptune", event)}
+            onClick={() => handlePlanetClick("Neptune")}
           >
             Neptune
           </a>
