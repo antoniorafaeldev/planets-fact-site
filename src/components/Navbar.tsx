@@ -4,13 +4,13 @@ import hamburgerIcon from "../assets/icon-hamburger.svg";
 export function Navbar({
   onPlanetChange,
 }: {
-  onPlanetChange: (planetName: string) => void;
+  onPlanetChange: (planetName: string, event: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handlePlanetClick = (planetName: string) => {
+  const handlePlanetClick = (planetName: string, event: React.MouseEvent<HTMLAnchorElement>) => {
     setMenuOpen(false);
-    onPlanetChange(planetName);
+    onPlanetChange(planetName, event);
   };
 
   return (
@@ -30,7 +30,7 @@ export function Navbar({
           <a
             className="navbar-link mercury"
             href="#mercury"
-            onClick={() => handlePlanetClick("Mercury")}
+            onClick={(event) => handlePlanetClick("Mercury", event)}
           >
             Mercury
           </a>
@@ -39,7 +39,7 @@ export function Navbar({
           <a
             className="navbar-link venus"
             href="#venus"
-            onClick={() => handlePlanetClick("Venus")}
+            onClick={(event) => handlePlanetClick("Venus", event)}
           >
             Venus
           </a>
@@ -48,7 +48,7 @@ export function Navbar({
           <a
             className="navbar-link earth"
             href="#earth"
-            onClick={() => handlePlanetClick("Earth")}
+            onClick={(event) => handlePlanetClick("Earth", event)}
           >
             Earth
           </a>
@@ -57,7 +57,7 @@ export function Navbar({
           <a
             className="navbar-link mars"
             href="#mars"
-            onClick={() => handlePlanetClick("Mars")}
+            onClick={(event) => handlePlanetClick("Mars", event)}
           >
             Mars
           </a>
@@ -66,7 +66,7 @@ export function Navbar({
           <a
             className="navbar-link jupiter"
             href="#jupiter"
-            onClick={() => handlePlanetClick("Jupiter")}
+            onClick={(event) => handlePlanetClick("Jupiter", event)}
           >
             Jupiter
           </a>
@@ -75,7 +75,7 @@ export function Navbar({
           <a
             className="navbar-link saturn"
             href="#saturn"
-            onClick={() => handlePlanetClick("Saturn")}
+            onClick={(event) => handlePlanetClick("Saturn", event)}
           >
             Saturn
           </a>
@@ -84,7 +84,7 @@ export function Navbar({
           <a
             className="navbar-link uranus"
             href="#uranus"
-            onClick={() => handlePlanetClick("Uranus")}
+            onClick={(event) => handlePlanetClick("Uranus", event)}
           >
             Uranus
           </a>
@@ -93,7 +93,7 @@ export function Navbar({
           <a
             className="navbar-link neptune"
             href="#neptune"
-            onClick={() => handlePlanetClick("Neptune")}
+            onClick={(event) => handlePlanetClick("Neptune", event)}
           >
             Neptune
           </a>

@@ -99,8 +99,6 @@ body {
 
 .planet {
   margin: 2rem;
-
-
 }
 
 .planet-info {
@@ -108,7 +106,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 13.75rem;
-
 }
 
 .planet-name {
@@ -149,8 +146,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-
-
 
 .planet-description {
   font-size: 0.875rem;
@@ -254,4 +249,48 @@ body {
   line-height: 130%;
   letter-spacing: -1.5px;
   text-transform: uppercase;
+}
+
+.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune {
+  transition: all 0.3s ease;
+}
+
+.mercury:hover {
+  border-bottom: 4px solid var(--color-aqua-100);
+  padding-bottom: 0.25rem;
+}
+
+.venus:hover {
+  border-bottom: 4px solid var(--color-amber-400);
+  padding-bottom: 0.25rem;
+}
+
+.earth:hover {
+  border-bottom: 4px solid var(--color-purple-600);
+  padding-bottom: 0.25rem;
+}
+
+.mars:hover {
+  border-bottom: 4px solid var(--color-red-500);
+  padding-bottom: 0.25rem;
+}
+
+.jupiter:hover {
+  border-bottom: 4px solid var(--color-orange-600);
+  padding-bottom: 0.25rem;
+}
+
+.saturn:hover {
+  border-bottom: 4px solid var(--color-bronze-700);
+  padding-bottom: 0.25rem;
+}
+
+.uranus:hover {
+  border-bottom: 4px solid var(--color-teal-400);
+  padding-bottom: 0.25rem;
+}
+
+.neptune:hover {
+  border-bottom: 4px solid var(--color-blue-600);
+  padding-bottom: 0.25rem;
 }

@@ -44,7 +44,7 @@
   .navbar {
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0.5rem 1rem;
   }
 
   .navbar-toggle {
@@ -140,6 +140,10 @@
     content: ">";
     opacity: 0.4;
     font-weight: 700;
+  }
+
+  .navbar-links {
+    border: none;
   }
 
   .planet {

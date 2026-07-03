@@ -26,9 +26,25 @@ function App() {
   const surfaceImage = planet.images.geology;
   const showSurfaceImage = activeView === "geology";
 
-  const handlePlanetChange = (planetName: string) => {
+  const handlePlanetChange = (
+    planetName: string,
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
     setCurrentPlanet(planetName);
     setActiveView(activeView);
+
+    const clickedPlanet = event.currentTarget;
+
+    const allPlanetLinks = document.querySelectorAll(".navbar-link");
+    allPlanetLinks.forEach((link) => {
+      link.classList.forEach((className) => {
+        if (className.startsWith("active-")) {
+          link.classList.remove(className);
+        }
+      });
+    });
+
+    clickedPlanet.classList.add(`active-${planetName.toLowerCase()}`);
   };
 
   const handleViewChange = (view: "overview" | "structure" | "geology") => {
