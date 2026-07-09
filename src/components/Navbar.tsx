@@ -1,5 +1,5 @@
 import { useState } from "react";
-import hamburgerIcon from "../assets/icon-hamburger.svg";
+import hamburgerIcon from "/images/icon-hamburger.svg";
 
 export function Navbar({
   currentPlanet,
