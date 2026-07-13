@@ -1,4 +1,5 @@
 import type { PlanetProps } from "../interfaces/planet";
+import type { optionButtonProps } from "../interfaces/optionButton";
 
 export function Planet({
   name,
@@ -46,27 +47,27 @@ export function Planet({
           </div>
 
           <div className="planet-options">
-            <button
+            <OptionButton
               className={optionClass("overview")}
               id="overview"
               onClick={() => onViewChange("overview")}
             >
               <span>01</span> <span>Overview</span>
-            </button>
-            <button
+            </OptionButton>
+            <OptionButton
               className={optionClass("structure")}
               id="structure"
               onClick={() => onViewChange("structure")}
             >
               <span>02</span> <span>Structure</span>
-            </button>
-            <button
+            </OptionButton>
+            <OptionButton
               className={optionClass("geology")}
               id="geology"
               onClick={() => onViewChange("geology")}
             >
               <span>03</span> <span>Surface</span>
-            </button>
+            </OptionButton>
           </div>
         </div>
       </div>
@@ -77,6 +78,14 @@ export function Planet({
         <Stat title="Average Temp." value={information.averageTemp} />
       </div>
     </section>
+  );
+}
+
+function OptionButton({className, id, onClick, children}: optionButtonProps) {
+  return (
+    <button className={className} id={id} onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
